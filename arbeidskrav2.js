@@ -34,7 +34,8 @@ const grades = [
 //Oppgave 1. Leser opp students arrayen og bruker .length for å telle antall studenter
 document.getElementById("studentCount").innerHTML = students.length;
 
-//Oppgave 2.
+//Oppgave 2. Lager en funksjon som skal telle gjennomsnittet til elevene også runder jeg tallet slik at det blir et helt tall med math.ceil
+// så gjør jeg om karakterene til bokstav karakterer.
 function gjennomsnitt(array) {
     let sum = 0;
 
@@ -53,7 +54,7 @@ function gjennomsnitt(array) {
 
 document.getElementById("averageGrade").innerHTML = gjennomsnitt(students);
 
-//Oppgave 3. 
+//Oppgave 3. Her printer jeg ut antallet som har fått hvilken karakter, samme fremgangsmåte på alle karakterene
 
 const numberGradeA = students.filter(s => s.grade === "6");
 const numberGradeB = students.filter(s => s.grade === "5");
@@ -69,7 +70,7 @@ document.getElementById("gradeD").innerHTML = numberGradeD.length;
 document.getElementById("gradeE").innerHTML = numberGradeE.length;
 document.getElementById("gradeF").innerHTML = numberGradeF.length;
 
-//Oppgave 4.
+//Oppgave 4. Her finner jeg gjennomsnitt alderen til alle studentene, bruker summen av alderen ogdeler de på antall, bruker også toFixed for 2 decimaler
 
 function gjennomsnittAlder(array) {
     let sum = 0; 
@@ -81,3 +82,18 @@ function gjennomsnittAlder(array) {
 }
 
 document.getElementById("averageAge").innerHTML = gjennomsnittAlder(students);
+
+//Oppgave 5. Her så filtrerer jeg alle 19 åringer og printer de ut i html arket
+
+const age19 = students.filter(s => s.age === 19);
+
+document.getElementById("highSchool").innerHTML = age19.length;
+
+//Oppgave 6. her sjekker jeg studenetene som har mer enn 1 års jobberfaring og printer til html arket.
+
+const jobbErfaring = students.filter(s => s.workexperience >= 1);
+
+document.getElementById("workExperience").innerHTML = jobbErfaring.length;
+
+//har kun brukt ki til veiledning og hint 
+// https://chatgpt.com/s/cx_6ac7f8dd39688191a4c5aff568c8ca3f
