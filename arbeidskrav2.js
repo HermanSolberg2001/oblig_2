@@ -68,3 +68,16 @@ document.getElementById("gradeC").innerHTML = numberGradeC.length;
 document.getElementById("gradeD").innerHTML = numberGradeD.length;
 document.getElementById("gradeE").innerHTML = numberGradeE.length;
 document.getElementById("gradeF").innerHTML = numberGradeF.length;
+
+//Oppgave 4.
+
+function gjennomsnittAlder(array) {
+    let sum = 0; 
+
+    array.map(s => {sum += s.age})
+
+    const averageAge = sum / array.length;
+    return averageAge.toFixed(2);
+}
+
+document.getElementById("averageAge").innerHTML = gjennomsnittAlder(students);
