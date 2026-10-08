@@ -30,4 +30,41 @@ const grades = [
     { letter: "F", score: 1}
 ]
 
-document.getElementById("students").innerHTML = studentCount;
+
+//Oppgave 1. Leser opp students arrayen og bruker .length for å telle antall studenter
+document.getElementById("studentCount").innerHTML = students.length;
+
+//Oppgave 2.
+function gjennomsnitt(array) {
+    let sum = 0;
+
+    array.map(n => {sum += Number(n.grade)})
+
+    const average = sum / array.length;
+
+    const roundNumber = Math.ceil(average);
+
+    const LetterGrade = grades.filter(s => s.score === roundNumber);
+
+    console.log(LetterGrade[0].letter);
+    
+    return LetterGrade[0].letter;
+}
+
+document.getElementById("averageGrade").innerHTML = gjennomsnitt(students);
+
+//Oppgave 3. 
+
+const numberGradeA = students.filter(s => s.grade === "6");
+const numberGradeB = students.filter(s => s.grade === "5");
+const numberGradeC = students.filter(s => s.grade === "4");
+const numberGradeD = students.filter(s => s.grade === "3");
+const numberGradeE = students.filter(s => s.grade === "2");
+const numberGradeF = students.filter(s => s.grade === "1");
+
+document.getElementById("gradeA").innerHTML = numberGradeA.length;
+document.getElementById("gradeB").innerHTML = numberGradeB.length;
+document.getElementById("gradeC").innerHTML = numberGradeC.length;
+document.getElementById("gradeD").innerHTML = numberGradeD.length;
+document.getElementById("gradeE").innerHTML = numberGradeE.length;
+document.getElementById("gradeF").innerHTML = numberGradeF.length;
