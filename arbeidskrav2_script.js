@@ -29,3 +29,5 @@ const grades = [
     { letter: "E", score: 2 },
     { letter: "F", score: 1}
 ]
+
+document.getElementById("students").innerHTML = studentCount;
